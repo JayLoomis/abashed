@@ -20,4 +20,15 @@ I understand sed a bit less at present, but:
 +   I don't really know why the 's/.../.../g' works, but it does This is an area
     for future study.
 
+## Spell-checking all files in a directory. ##
+
+You can check the spelling in text files with the `aspell` command (included on
+Goobuntu). It is very complicated. You can't check everything in a directory with
+`aspell`.
+
+I haven't gotten a recursive version yet, but this works per directory:
+
+```bash
+for f in $(evsite list cl NNNNNNNNN) ; do echo $(basename $f) ; aspell list < $f | sort | uniq -c ; done
+```
 <!-- ----1----|----2----|----3----|----4----|----5----|----6----|----7----|----8 -->
