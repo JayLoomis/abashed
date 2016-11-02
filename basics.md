@@ -29,4 +29,16 @@ Goobuntu). It is very complicated. You can't check everything in a directory wit
 ```bash
 for f in $(evsite list cl NNNNNNNNN) ; do echo ${f#*/en/} ; aspell list -p ~/.aspell.en.pws < $f | sort | uniq -c ; done
 ```
+
+All of the words for your personal exception list should be stored in
+`~/.aspell.en.pws`, a text file that starts with a definition line:
+
+```
+personal_ws-1.1 en len
+```
+
+Where len is the number of words in the list (it won't break anything if this isn't
+accurate, but it's good to keep it up to date).
+
+Each line after the first contains a single word.
 <!-- ----1----|----2----|----3----|----4----|----5----|----6----|----7----|----8 -->
